@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROP AND FERTILIZER RECOMMENDATION</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(https://wallpaperaccess.com/full/488949.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 350px; /* Adjusted width for better presentation */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px; /* Reduced margin for a cleaner look */
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #008bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container {
+    position: absolute;
+    top: calc(50% + 60px); /* Adjusted position */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+}
+
+input[type="text"],
+input[type="password"],
+#loginBtn {
+    display: block;
+    width: calc(100% - 30px); /* Adjusted width */
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="password"] {
+    margin-bottom: 5px; /* Adjusted margin for input fields */
+}
+
+#loginBtn {
+    width: calc(50% - 15px); /* Adjusted width for login button */
+    margin-top: 10px; /* Adjusted margin */
+}
+
+
+.error-message {
+     color: white; 
+     margin-top: 10px; 
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CROP AND FERTILIZER RECOMMENDATION</h1>
+        <form method="post" action="{{ url_for('login') }}">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <!-- Display flashed messages for 'danger' level (errors) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'danger' %}
+                        <div class="error-message">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    
+    <!-- Crop and Fertilizer buttons -->
+</body>
+</html>

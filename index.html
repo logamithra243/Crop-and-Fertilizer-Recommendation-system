@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-image: url('https://static.marketsfarm.com/wp-content/uploads/2019/03/News-859955632.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Home</h1>
+    <p>
+        Please <a href="{{ url_for('login') }}">log in</a>
+        or <a href="{{ url_for('register') }}">register</a>
+        to get started.
+    </p>
+</body>
+</html>

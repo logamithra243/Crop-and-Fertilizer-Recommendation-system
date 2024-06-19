@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        body {
+            background-image: url('https://iffconanos3images.s3.ap-south-1.amazonaws.com/public/admin/news/PGee0XccP7I3QS0Y3a9yrPQihAGwnIanVppP70zY.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>recommendation</h1>
+    <p>
+        <a href="{{ url_for('crop_recommendation') }}">Crop</a>
+        or <a href="{{url_for('fertilizer_recommendation_route')}}">Fertilizer</a>
+        to get started.
+    </p>
+</body>
+</html>

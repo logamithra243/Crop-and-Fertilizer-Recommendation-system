@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROP AND FERTILIZER RECOMMENDATION</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://wallpaperaccess.com/full/488949.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        button {
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 300px;
+            padding: 12px;
+            margin: 10px auto;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: block;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group button {
+            margin-right: 10px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form method="post" action="{{ url_for('register') }}">
+        <label for="username">Username:</label>
+        <input type="text" name="username" pattern="[a-zA-Z0-9]+" title="Username must contain only letters and numbers" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" pattern="[0-9]{1,6}" title="Password must contain only numbers and have a maximum length of 6 digits" required>
+        <button type="submit">Register</button>
+      </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+       {% endif %}
+    {% endwith %}
+</body>
+</html>
