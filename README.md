@@ -1,4 +1,4 @@
-                                Crop and Fertilizer Recommendation System 
+***Crop and Fertilizer Recommendation System***
 
 ***Description:***
 
